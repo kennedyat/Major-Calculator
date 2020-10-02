@@ -1,0 +1,13 @@
+#include <string>
+
+using namespace std;
+
+class Major{
+public:
+    void heading(string name);
+    
+    void printMessage(string userMajor, int credits);
+    
+    int getCredits(int *credits, char major, string *yourMajor);
+    
+};

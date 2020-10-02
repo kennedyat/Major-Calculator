@@ -1,0 +1,43 @@
+#include "header.h"
+#include <stdio.h>
+#include <string>
+#include <iostream>
+#include <cctype>
+
+using namespace std;
+
+void Major::heading(string name){//outputs name
+    
+    cout<<"Hello "<< name<<"!"<<endl; 
+    
+}
+
+int Major::getCredits(int *credits, char major, string *yourMajor){ //Determines the amount of credits you need based on major
+   
+    major=toupper(major);
+    
+    if(major == 'C'){
+        *credits= (82-*credits);
+        *yourMajor = "Computer Engineering";
+    }
+    else if(major == 'E'){
+        *credits=(80-*credits);
+        *yourMajor = "Electrical Engineering";
+    }
+    else if(major == 'S'){
+        *credits=(75-*credits);
+        *yourMajor = "Computer Science";
+    }
+    else if(major == 'M'){
+        *credits=(85-*credits);
+        *yourMajor = "Math";
+    }
+    return *credits;
+    
+}
+
+void Major::printMessage(string userMajor, int credits){ //Final output
+    
+   cout<<"As a "<< userMajor<< " major, you still need "<< credits<< " credits to graduate"<<endl;
+   
+}

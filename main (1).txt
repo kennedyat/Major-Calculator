@@ -1,0 +1,35 @@
+#include <stdio.h>
+#include "header.h"
+#include <string>
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    Major mjr; //calls Major class
+    char major;
+    int numCredits;
+    string name;
+    string yourMajor;
+   
+    
+    cout<<"What is your name?"<<endl;
+    cin>>name;
+    
+    mjr.heading(name);//Heading function
+    
+    cout<<"What is your major? Options:"<< endl<< //Ask user for their major
+    "C - Computer Engineering"<< endl<<
+    "E - Electrical Engineering"<< endl<<
+    "S - Computer Science"<< endl<<
+    "M - Math"<< endl;
+    cin>> major;
+
+    cout<<"How many credits have you completed?"<<endl;//Ask user for their credits
+    cin>> numCredits;
+    
+    mjr.getCredits(&numCredits, major, &yourMajor);//Calls getCredits
+    
+    mjr.printMessage(yourMajor,numCredits);//Calls printMessage
+}
